@@ -35,6 +35,7 @@ func notFound(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNotFound)
 	fmt.Fprint(w, "<h1>Sorry but we couldn't find the page you were looking for.</h1>")
 }
+
 func basicAuth(handler http.HandlerFunc, realm string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		user, pass, ok := r.BasicAuth()
